@@ -33,7 +33,7 @@ const home = require('./routes/home');
 // call and use middleware functions
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(express.static('public'));
+// app.use(express.static('public'));
 app.use('/api/stories', stories);
 app.use('/api/cities', cities);
 app.use('/', home);
@@ -67,7 +67,7 @@ if(process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
     
     const path = require('path');
-    app.get('/', (req, res) => {
+    app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
