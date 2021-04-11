@@ -1,7 +1,11 @@
 {
   "name": "weather-stories",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is a lovely interactive weather movie app",
+  "version": "1.0.0",
+  "engines": {
+    "node": "14.15.4"
+  },
   "main": "index.js",
   "scripts": {
     "build": "cd client && npm run build",
