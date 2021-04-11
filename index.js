@@ -33,11 +33,11 @@ const home = require('./routes/home');
 // call and use middleware functions
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(cors());
 app.use(express.static('public'));
 app.use('/api/stories', stories);
 app.use('/api/cities', cities);
 app.use('/', home);
+app.use(cors());
 // app.use(logger); // this is a custom middleware function - comment out if no need
 // app.use(authenticate); // this is a custom middleware function - comment out if no need
 
