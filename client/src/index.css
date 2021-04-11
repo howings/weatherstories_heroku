@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900");
+/* import bootstrap to set changes */
+/* make the customizations */
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #202020;
+  background-color: #202020;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header-height {
+  position: absolute;
+  top: 0;
+  padding-left: 10%;
+  width: 100%;
+  height: 10%;
+  background-color: white;
+  z-index: 5;
+}
+
+/*# sourceMappingURL=index.css.map */

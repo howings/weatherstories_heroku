@@ -1,0 +1,6 @@
+{
+    "name": "Weather Stories",
+    "mail": {
+        "host": "prod-mail-server"
+    }
+}
