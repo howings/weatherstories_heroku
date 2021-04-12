@@ -40,7 +40,7 @@ function Weather() {
     base:"https://api.openweathermap.org/data/2.5/"
   }
   
-  const apiCity = "http://localhost:4000/api/cities/";
+  const apiCity = `${process.env.REACT_APP_BASE_URL}/cities/`;
   
 
   // ----fetch API---------------------------------------
@@ -76,15 +76,14 @@ function Weather() {
 
   // -----------------------------------------------------
   const axiosCity = axios.create({
-    baseURL: `http://localhost:4000/api/cities/`
+    baseURL: `${process.env.REACT_APP_BASE_URL}/cities/`
   })
 
   const axiosWeather = axios.create({
-    baseURL: `http://localhost:4000/api/stories/`
+    baseURL: `${process.env.REACT_APP_BASE_URL}/stories/`
   })
 
-  // const fetchWeatherURL = "http://localhost:4000/api/stories/search/?weather="
-
+  
   const insertCity = async () => {
     let response = await axiosCity.post('/', {name: currentCity})
       .then(response => console.log(response.status))
@@ -92,7 +91,7 @@ function Weather() {
   }
   
   const getMovieId = async () => {
-    fetch(`http://localhost:4000/api/stories/search/?weather=${currentWeather}`)
+    fetch(`${process.env.REACT_APP_BASE_URL}/stories/search/?weather=${currentWeather}`)
       .then(res => res.json())
       .then(result => {
         console.log(result[0].movieId);
