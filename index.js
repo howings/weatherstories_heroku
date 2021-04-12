@@ -36,7 +36,7 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 // app.use(express.static('public'));
 app.use('/api/stories', stories);
 app.use('/api/cities', cities);
-app.use('/', home);
+// app.use('/', home);
 app.use(cors());
 // app.use(logger); // this is a custom middleware function - comment out if no need
 // app.use(authenticate); // this is a custom middleware function - comment out if no need
@@ -63,14 +63,22 @@ app.use(cors());
 // }
 
 // not sure if this is working....
-if(process.env.NODE_ENV === 'production') {
-    const path = require('path');
-    app.use(express.static(path.join(__dirname, './client/build')));
+// if(process.env.NODE_ENV === "production") {
+//     const path = require('path');
+//     app.use(express.static(path.join(__dirname, "client/build")));
     
-    app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, + './client/build/index.html'));
-    });
+//     app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+//     });
 
+// }
+if (process.env.NODE_ENV === "production") {
+    // Set static folder
+    app.use('/', express.static("client/build"));
+  
+    app.get("*", (req, res) => {
+      res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    }); 
 }
 
 // use an environment variable PORT in case of conflict 
