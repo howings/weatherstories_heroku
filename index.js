@@ -65,11 +65,12 @@ app.use(cors());
 // not sure if this is working....
 if(process.env.NODE_ENV === 'production') {
     const path = require('path');
-    app.use(express.static(path.join(__dirname, 'client', 'build')));
+    app.use(express.static(path.join(__dirname, './client/build')));
     
-    // app.get('*', (req, res) => {
-    // res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    // });
+    app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, + './client/build/index.html'));
+    });
+
 }
 
 // use an environment variable PORT in case of conflict 
