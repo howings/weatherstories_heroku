@@ -104,7 +104,6 @@ function Weather() {
   };
 
   const checkInput = (e) => {
-    e.preventDefault();
     if (!e.target.value) {
       initialRender.current = false;
       console.log(initialRender.current);
@@ -215,17 +214,12 @@ function Weather() {
         </div>
           ) : ('')}
           <div className="search-box-outer">
-            <form className="search-box-inner">
+            <form className="search-box-inner" action="#">
             <input
               type="text"
               className="search-bar"
               placeholder="Enter a City Name"
               onChange={e => setQuery(e.target.value)}
-              onKeyUp={(evt) => {
-                if (evt.keyCode === 13) {
-                    return checkInput;
-                }
-              }}
               value={query}
             />
             <button
