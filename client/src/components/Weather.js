@@ -214,13 +214,18 @@ function Weather() {
         </div>
           ) : ('')}
           <div className="search-box-outer">
-            <form className="search-box-inner" action="#">
+            <form className="search-box-inner">
             <input
               type="text"
               className="search-bar"
               placeholder="Enter a City Name"
               onChange={e => setQuery(e.target.value)}
               value={query}
+              onKeyDown={e => {
+                if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+                  e.preventDefault();
+                  return checkInput
+              }}}
             />
             <button
             type="button"
