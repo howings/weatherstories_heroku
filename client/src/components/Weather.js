@@ -104,6 +104,7 @@ function Weather() {
   };
 
   const checkInput = (e) => {
+    e.preventDefault();
     if (!e.target.value) {
       initialRender.current = false;
       console.log(initialRender.current);
@@ -220,6 +221,11 @@ function Weather() {
               className="search-bar"
               placeholder="Enter a City Name"
               onChange={e => setQuery(e.target.value)}
+              onKeyUp={(evt) => {
+                if (evt.keyCode === 13) {
+                    return checkInput;
+                }
+              }}
               value={query}
             />
             <button
