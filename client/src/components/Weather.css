@@ -84,27 +84,30 @@
   color: #fff;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
-@media screen and (max-width:1000px) {
-  .city-div{
-    display:none;
+@media screen and (max-width: 1000px) {
+  .city-div {
+    display: none;
   }
-  .weather-data{
+  .weather-data {
     margin-top: -40px;
   }
 }
-@media screen and (max-width:480px) {
-  .city-div{
-    display:none;
+@media screen and (max-width: 480px) {
+  .city-div {
+    display: none;
   }
-  .weather-data{
+  #info {
+    display: none;
+  }
+  .weather-data {
     margin-top: -60px;
   }
 }
-@media screen and (max-height:800px) {
-  .city-div{
-    display:none;
+@media screen and (max-height: 800px) {
+  .city-div {
+    display: none;
   }
-  .weather-data{
+  .weather-data {
     margin-top: -40px;
   }
 }

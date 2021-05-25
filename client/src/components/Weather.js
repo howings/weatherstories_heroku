@@ -257,6 +257,7 @@ function Weather() {
               title={data.title}
               original_title={data.original_title}
               producer={data.producer}
+              director={data.director}
               release_date={data.release_date}
               running_time={data.running_time}
             />
