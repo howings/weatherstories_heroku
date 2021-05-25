@@ -107,6 +107,9 @@
   .city-div {
     display: none;
   }
+  #info {
+    display: none;
+  }
   .weather-data {
     margin-top: -40px;
   }
